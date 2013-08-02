@@ -130,31 +130,41 @@ if ($need_login) { ?>
 			<p style="text-align:center;"><input type="submit" class="button mainaction" value="Authentication" /></p>
 		</form>
 
-<?php
-} elseif (strlen($success) > 0 && empty($errors)) {
+<?php	}
+elseif (strlen($success) > 0 && empty($errors)) {
 	print $success;
-} else { ?>
+	}
+	else
+	{ ?>
 
-		<form name="form "action="index.php" method="post">
+		<form name="form" action="index.php" method="post">
 			<input type="hidden"  name="passwordmail"  value="<?php echo $passwordmail; ?>">
 			<input type="hidden"  name="email"  value="<?php echo $email_name; ?>">
 
 			<table summary="" border="0">
-			<tbody>
-			<tr><td colspan=2>
-				Your account:  <?php echo $email; ?><br /><br />
-			</td></tr>
-			<tr><td class="title">
-			<label for="newpass">Your new password</label>
-			</td>
-			<td><input name="newpass" id="newpass" type="password" /></td>
-			</tr>
-			<tr><td class="title">
-			<label for="newpass2">Confirm new password</label>
-			</td>
-			<td><input name="newpass2" id="newpass2" type="password" /></td>
-			</tr>
-			</tbody>
+				<tbody>
+					<tr>
+						<td colspan=2>
+							Your account:  <?php echo $email; ?><br /><br />
+						</td>
+					</tr>
+					<tr>
+						<td class="title">
+							<label for="newpass">Your new password</label>
+						</td>
+						<td>
+							<input name="newpass" id="newpass" type="password" />
+						</td>
+					</tr>
+					<tr>
+						<td class="title">
+							<label for="newpass2">Confirm new password</label>
+						</td>
+						<td>
+							<input name="newpass2" id="newpass2" type="password" />
+						</td>
+					</tr>
+				</tbody>
 			</table>
 
 			<p style="text-align:center;"><input type="submit" class="button mainaction" value="Send" /></p>
